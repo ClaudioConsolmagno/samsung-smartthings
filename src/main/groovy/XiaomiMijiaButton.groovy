@@ -122,8 +122,10 @@ def parse(String description) {
         case 'BUTTON_4':
             return handleButtonEvent(parsableEvents().indexOf(incomingEvent))
         case 'CATCH_ALL':
+            displayInfoLog("CATCH_ALL message: '${description}'")
             return parseCatchAllMessage(description)
         case 'READ_ATTR':
+            displayInfoLog("READ_ATTR message: '${description}'")
             return parseReadAttrMessage(description)
         case 'BUTTON_1_RELEASED':
             // Not used in this handler
@@ -148,6 +150,13 @@ static String resolveIncomingEvent(String description) {
         }
         return parsableEvent(6)
     } else if (description.startsWith('read attr - raw:')) {
+        def targetString = description.split(',')[0]
+        if (targetString.size() == 37 &&  targetString.matches('.*0080200\\d$')) {
+            def button = targetString[36] as int
+            if (button > 1 && button < 5) {
+                return parsableEvent(button)
+            }
+        }
         return parsableEvent(7)
     } else {
         return parsableEvent(0)

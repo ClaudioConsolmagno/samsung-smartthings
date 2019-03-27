@@ -1,4 +1,4 @@
-﻿﻿## Xiaomi Mijia Smart Switch - Smart Things Handler
+﻿## Xiaomi Mijia Smart Switch - Smart Things Handler
 
 This handler allows for single, double, triple and quadruple clicks. It's built based on code found on [bspranger repo here](https://github.com/bspranger/Xiaomi/blob/master/devicetypes/bspranger/xiaomi-button.src/xiaomi-button.groovy).
 
