@@ -1,4 +1,4 @@
-﻿#SmartThings Handlers and SmartApps
+# SmartThings Handlers and SmartApps
 Personal Repo of custom SmartThings Handlers and SmartApps.
 
 ### Handler: Xiaomi Mijia Smart Switch
