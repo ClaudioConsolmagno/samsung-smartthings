@@ -1,3 +1,5 @@
+package handlers
+
 import spock.lang.Specification
 import spock.lang.Unroll
 
@@ -13,7 +15,7 @@ class XiaomiMijiaButtonSpec extends Specification {
     Script xiaomiButton
 
     def setup() {
-        String fileUnderTest = new File('src/main/groovy/XiaomiMijiaButton.groovy').text
+        String fileUnderTest = new File('src/main/groovy/handlers/XiaomiMijiaButton.groovy').text
         def index = fileUnderTest.indexOf('// METHODS START')
         def xiaomiButtonClassString = fileUnderTest.substring(index)
         xiaomiButton = new GroovyShell(defaultBinding()).parse(xiaomiButtonClassString)
